@@ -17,7 +17,8 @@ for SEED in "${SEEDS[@]}"; do
       OUTPUT_DIR=$2/${MODEL_NAME}_negation_all_${SEED}_train_${SETTING}_test_${TEST_FILE}
       mkdir -p $OUTPUT_DIR
       # # # changed test to dev on line 24
-      python run_negatedqa_t5.py \
+      # # # # # python run_negatedqa_t5.py \
+      deepspeed run_negatedqa_t5.py --per_device_eval_batch_size 1 --gradient_accumulation_steps 1 --deepspeed deepspeed_config.json \
         --model_name_or_path allenai/$MODEL_NAME \
         --train_file ${DATA_DIR}/condaqa_train_unifiedqa.json \
         --validation_file ${DATA_DIR}/condaqa_dev_unifiedqa.json \

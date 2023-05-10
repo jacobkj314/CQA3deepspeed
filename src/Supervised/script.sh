@@ -4,7 +4,7 @@
 #SBATCH --ntasks=32
 #SBATCH --nodes=1
 #SBATCH --gres=gpu:a100:1
-#SBATCH --time=8:00:00
+#SBATCH --time=12:00:00
 #SBATCH --mem=80GB
 #SBATCH --mail-user=jacob.k.johnson@utah.edu
 #SBATCH --mail-type=BEGIN,FAIL,END
@@ -25,6 +25,6 @@ export TRANSFORMER_CACHE="../../../cache"
 
 #echo setup
 
-bash run_single_unifiedqa.sh unifiedqa-v2-t5-base-1251000 ../../../out/
-bash eval_single_unifiedqa_model.sh unifiedqa-v2-t5-base-1251000 ../../../out/
-bash compute_unifiedqa_stats.sh unifiedqa-v2-t5-base-1251000 ../../../out/
+bash run_single_unifiedqa.sh unifiedqa-v2-t5-3b-1251000 ../../../out/
+bash eval_single_unifiedqa_model.sh unifiedqa-v2-t5-3b-1251000 ../../../out/
+bash compute_unifiedqa_stats.sh unifiedqa-v2-t5-3b-1251000 ../../../out/
