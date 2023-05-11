@@ -24,7 +24,7 @@ for SEED in "${SEEDS[@]}"; do
         --validation_file ${DATA_DIR}/condaqa_dev_unifiedqa.json \
         --test_file ${DATA_DIR}/condaqa_dev_unifiedqa.json \
         --do_train \
-        --per_device_train_batch_size 8 \
+        --per_device_train_batch_size 1 \
         --learning_rate 1e-5 \
         --num_train_epochs 5 \
         --output_dir $OUTPUT_DIR \
